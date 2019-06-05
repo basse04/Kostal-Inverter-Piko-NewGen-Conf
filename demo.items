@@ -1,0 +1,72 @@
+Number:Power SolarPower         "AC Power [%.2f %unit%]"                        <energy> { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridOutputPower" }
+Number:Power SolarPower_Max     "Todays Maximum [%.2f W]"                       <energy> 
+Number:Power SolarPower_Min     "Todays Mimimum [%.2f W]"                       <energy>  
+Number SolarPowerChart          "Chart Period Solar Power"
+DateTime SolarPowerTimestamp    "Last Update AC Power [%1$ta %1$tR]"            <clock>
+
+Number:Energy SolarEnergyDay     "Day Energy [%.2f %unit%]"                     <energy> { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:yield_Day" }
+Number:Energy SolarEnergyDay_Max "Todays Maximum [%.2f Wh]"                     <energy>  
+Number:Energy SolarEnergyDay_Min "Todays Mimimum [%.2f Wh]"                     <energy>  
+Number SolarEnergyDayChart      "Chart Period SolarEnergyDay "
+DateTime SolarEnergyDayTimestamp    "Last Update Day Energy  [%1$ta %1$tR]"     <clock>
+
+Number:Energy SolarTotalEnergy         "Total Energy [%.2f %unit%]"             <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:yield_Total" }
+Number:Energy SolarTotalEnergy_Max     "Todays Maximum [%.2f kWh]"              <energy>  
+Number:Energy SolarTotalEnergy_Min     "Todays Mimimum [%.2f kWh]"              <energy>  
+Number SolarTotalEnergyChart    "Chart Period SolarTotalEnergy "
+DateTime SolarTotalEnergyTimestamp    "Last Update Total Energy  [%1$ta %1$tR]" <clock>
+
+String SolarStatus              "Status[%s]"                                    <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:operatingStatus" }
+Number SolarStatus_Max          "Todays Maximum"                                <energy>  
+Number SolarStatus_Min          "Todays Mimimum"                                <energy>  
+Number SolarStatusChart         "Chart Period SolarStatus"                      
+DateTime SolarStatusTimestamp   "Last Update Solar Status  [%1$ta %1$tR]"       <clock>
+
+Number:ElectricPotential    GridVoltageL1    "L1 Voltage[%.2f %unit%]"          <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridVoltageL1" }
+Number:ElectricCurrent      GridCurrentL1    "L1 Current[%.2f %unit%]"          <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridCurrentL1" }
+Number:Power                GridPowerL1      "L1 Power[%.2f %unit%]"            <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridPowerL1" }
+Number:ElectricPotential    GridVoltageL2    "L2 Voltage[%.2f %unit%]"          <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridVoltageL2" }
+Number:ElectricCurrent      GridCurrentL2    "L2 Current[%.2f %unit%]"          <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridCurrentL2" }
+Number:Power                GridPowerL2      "L2 Power[%.2f %unit%]"            <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridPowerL2" }
+Number:ElectricPotential    GridVoltageL3    "L3 Voltage[%.2f %unit%]"          <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridVoltageL3" }
+Number:ElectricCurrent      GridCurrentL3    "L3 Current[%.2f %unit%]"          <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridCurrentL3" }
+Number:Power                GridPowerL3      "L3 Power[%.2f %unit%]"            <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridPowerL3" }
+Number:Power                DcPvPower        "PV Power[%.2f %unit%]"            <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:dcPowerPV" }
+Number:ElectricPotential    Dc1Voltage       "DC1 Voltage[%.2f %unit%]"         <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:dc1Voltage" }
+Number:ElectricCurrent      Dc1Current       "DC1 Current[%.2f %unit%]"         <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:dc1Current" }
+Number:Power                Dc1Power         "DC1 Power[%.2f %unit%]"           <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:dc1Power" }
+Number:ElectricPotential    Dc2Voltage       "DC2 Voltage[%.2f %unit%]"         <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:dc2Voltage" }
+Number:ElectricCurrent      Dc2Current       "DC2 Current[%.2f %unit%]"         <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:dc2Current" }
+Number:Power                Dc2Power         "DC2 Power[%.2f %unit%]"           <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:dc2Power" }
+Number:ElectricPotential    Dc3Voltage       "DC3 Voltage[%.2f %unit%]"         <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:dc3Voltage" }
+Number:ElectricCurrent      Dc3Current       "DC3 Current[%.2f %unit%]"         <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:dc3Current" }
+Number:Power                Dc3Power         "DC3 Power[%.2f %unit%]"           <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:dc3Power" }
+
+
+Number:Power            AktHomeConsumptionSolar "Home Consumption Solar[%.2f %unit%]"   <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:aktHomeConsumptionSolar" }
+Number:Power            AktHomeConsumptionBat   "Home Consumption Battery[%.2f %unit%]" <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:aktHomeConsumptionBat" }
+Number:Power            AktHomeConsumptionGrid  "Home Consumption Grid[%.2f %unit%]"    <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:aktHomeConsumptionGrid" }
+Number:Power            PhaseSelHomeConsumpL1   "Home Consumption L1[%.2f %unit%]"      <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:phaseSelHomeConsumpL1" }
+Number:Power            PhaseSelHomeConsumpL2   "Home Consumption L2[%.2f %unit%]"      <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:phaseSelHomeConsumpL2" }
+Number:Power            PhaseSelHomeConsumpL3   "Home Consumption L3[%.2f %unit%]"      <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:phaseSelHomeConsumpL3" }
+Number:Frequency        GridFreq                "Grid Frequency[%.2f %unit%]"           <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridFreq" }
+Number:Angle            GridCosPhi              "Grid Phase Shift[%.2f %unit%]"         <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:gridCosPhi" }
+Number:Energy           HomeConsumption_Day     "Home Consumption Daily[%.2f %unit%]"   <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:homeConsumption_Day" }
+Number:Energy           OwnConsumption_Day      "Own Consumption Daily[%.2f %unit%]"    <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:ownConsumption_Day" }
+Number:Dimensionless    OwnConsRate_Day         "Own Cons Rate Daily[%.2f %unit%]"      <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:ownConsRate_Day" }
+Number:Dimensionless    AutonomyDegree_Day      "Autonomy Degree Daily[%.2f %unit%]"    <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:autonomyDegree_Day" }
+Number:Energy           HomeConsumption_Total   "Home Consumption Total[%.2f %unit%]"   <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:homeConsumption_Total" }
+Number:Energy           OwnConsumption_Total    "Own Consumption Total[%.2f %unit%]"    <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:ownConsumption_Total" }
+Number:Time             TotalOperatingTime      "Operating Time Total[%.2f %unit%]"     <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:totalOperatingTime" }
+Number:ElectricCurrent  Current                 "Current[%.2f %unit%]"                  <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:current" }
+Number:ElectricCurrent  CurrentDir              "Current Dir[%.2f %unit%]"              <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:currentDir" }
+String                  ChargeCycles            "Charge Cycles[%s]"                     <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:chargeCycles" }
+Number:Temperature      BatteryTemperature      "Battery Temperature[%.2f %unit%]"      <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:batteryTemperature" }
+Number:Time             Loginterval             "Log Interval[%.2f %unit%]"             <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:loginterval" }
+String                  S0InPulseCnt            "S0 In Pulse Counter[%s]"               <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:s0InPulseCnt" }
+
+
+String                  InverterName             "Inverter Name[%s]"                    <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:inverterName" }
+String                  SmartBatteryControl_Text "Smart Battery Control Text[%s]"       <energy>  { channel="kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:smartBatteryControl_Text" }
+
+// vim: syntax=Xtend

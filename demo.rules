@@ -1,0 +1,127 @@
+// Creates an item that stores the last values of this item, SolarPower
+rule "Update max SolarPower"
+when
+    Item SolarPower changed or
+    Time cron "0 0 0 * * ?"// or
+    //System started
+then
+    if(SolarPower !== null) {
+    postUpdate(SolarPower_Max, SolarPower.maximumSince(now.withTimeAtStartOfDay(), "rrd4j").state)
+    postUpdate(SolarPower_Min, SolarPower.minimumSince(now.withTimeAtStartOfDay(), "rrd4j").state)
+    }
+end
+
+// Creates an item that stores the last update time of this item, SolarPower
+rule "Records last solar update time SolarPower"
+when
+    Item SolarPower received update
+then
+    postUpdate(SolarPowerTimestamp, new DateTimeType())
+end
+
+
+// Creates an item that stores the last values of this item, SolarEnergyDay
+rule "Update max and min SolarEnergyDay"
+when
+    Item SolarEnergyDay changed or
+    Time cron "0 0 0 * * ?"// or
+    //System started
+then
+    if(SolarEnergyDay !== null) {
+    postUpdate(SolarEnergyDay_Max, SolarEnergyDay.maximumSince(now.withTimeAtStartOfDay(), "rrd4j").state)
+    postUpdate(SolarEnergyDay_Min, SolarEnergyDay.minimumSince(now.withTimeAtStartOfDay(), "rrd4j").state)
+    }
+end
+
+// Creates an item that stores the last update time of this item, SolarEnergyDay
+rule "Records last solar update time SolarEnergyDay"
+when
+    Item SolarEnergyDay received update
+then
+    postUpdate(SolarEnergyDayTimestamp, new DateTimeType())
+end
+
+
+// Creates an item that stores the last values of this item, SolarTotalEnergy
+rule "Update max and min SolarTotalEnergy"
+when
+    Item SolarTotalEnergy changed or
+    Time cron "0 0 0 * * ?"// or
+    //System started
+then
+    if(SolarTotalEnergy !== null) {
+    postUpdate(SolarTotalEnergy_Max, SolarTotalEnergy.maximumSince(now.withTimeAtStartOfDay(), "rrd4j").state)
+    postUpdate(SolarTotalEnergy_Min, SolarTotalEnergy.minimumSince(now.withTimeAtStartOfDay(), "rrd4j").state)
+    }
+end
+
+// Creates an item that stores the last update time of this item, SolarTotalEnergy
+rule "Records last solar update time SolarTotalEnergy"
+when
+    Item SolarTotalEnergy received update
+then
+    postUpdate(SolarTotalEnergyTimestamp, new DateTimeType())
+end
+
+
+
+// Creates an item that stores the last values of this item, SolarStatus
+rule "Update max and min SolarStatus"
+when
+    Item SolarStatus changed or
+    Time cron "0 0 0 * * ?"// or
+    //System started
+then
+    if(SolarStatus !== null) {
+    postUpdate(SolarStatus_Max, SolarStatus.maximumSince(now.withTimeAtStartOfDay(), "rrd4j").state)
+    postUpdate(SolarStatus_Min, SolarStatus.minimumSince(now.withTimeAtStartOfDay(), "rrd4j").state)
+    }
+end
+
+// Creates an item that stores the last update time of this item, SolarStatus
+rule "Records last solar update time SolarStatus"
+when
+    Item SolarStatus received update
+then
+    postUpdate(SolarStatusTimestamp, new DateTimeType())
+end
+
+// Creates an item that stores the last values of this item, SunElevation
+rule "Update max and min SunElevation"
+when
+    Item SunElevation changed or
+    Time cron "0 0 0 * * ?"// or
+    //System started
+then
+    if(SunElevation !== null) {
+    postUpdate(SunElevation_Max, SunElevation.maximumSince(now.withTimeAtStartOfDay(), "rrd4j").state)
+    postUpdate(SunElevation_Min, SunElevation.minimumSince(now.withTimeAtStartOfDay(), "rrd4j").state)
+    }
+end
+
+//// Set Smart Battery Control to Thrue when channel received command ON, turns it off when channel received command OFF
+//rule "Smart Battery Control"
+//when
+//   Channel "kostalinverterpikonewgenconf:kostalinverterpikonewgenconf:inverter:smartBatteryControl" triggered
+//then
+//    if(receivedCommand == ON) SmartBatteryControl.sendCommand(ON)
+//    else SmartBatteryControl.sendCommand(OFF)
+//end
+
+
+rule "Edit Invertername"
+when
+    Time cron "0 0/2 * * * ?"
+then
+    InverterName.sendCommand("Uddens")
+end
+
+rule "Edit SmartBatteryControl_Text"
+when
+    Time cron "0 0/3 * * * ?"
+then
+    SmartBatteryControl_Text.sendCommand("False")
+end
+
+// vim: syntax=Xtend
+
